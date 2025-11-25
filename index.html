@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style> :root { --primary: #4361ee; --secondary: #3a0ca3; --success: #4cc9f0; --light: #f8f9fa; --dark: #212529; --gray: #6c757d; --border: #dee2e6; --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); --transition: all 0.3s ease; } * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } body { background-color: #f5f7fb; color: var(--dark); line-height: 1.6; } .container { max-width: 1200px; margin: 0 auto; padding: 20px; } header { text-align: center; margin-bottom: 40px; padding: 30px 0; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 12px; box-shadow: var(--shadow); } header h1 { font-size: 2.5rem; margin-bottom: 10px; } header p { font-size: 1.1rem; opacity: 0.9; } .controls { display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; } .btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: var(--transition); display: flex; align-items: center; gap: 8px; } .btn-primary { background-color: var(--primary); color: white; } .btn-primary:hover { background-color: var(--secondary); transform: translateY(-2px); } .btn-success { background-color: var(--success); color: white; } .btn-success:hover { background-color: #3aa8d0; transform: translateY(-2px); } .btn-outline { background-color: transparent; border: 2px solid var(--primary); color: var(--primary); } .btn-outline:hover { background-color: var(--primary); color: white; } .search-box { flex-grow: 1; max-width: 400px; position: relative; } .search-box input { width: 100%; padding: 12px 20px 12px 45px; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; transition: var(--transition); } .search-box input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2); } .search-box i { position: absolute; left: 15px; top: 50%; transform: translate(0, -90%); color: var(--gray); } .tabs { display: flex; margin-bottom: 30px; border-bottom: 2px solid var(--border); } .tab { padding: 12px 24px; cursor: pointer; font-weight: 600; transition: var(--transition); border-bottom: 3px solid transparent; } .tab.active { color: var(--primary); border-bottom-color: var(--primary); } .tab:hover:not(.active) { color: var(--primary); background-color: rgba(67, 97, 238, 0.05); } .content { display: none; } .content.active { display: block; animation: fadeIn 0.5s ease; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } .cdn-card { background-color: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: var(--shadow); transition: var(--transition); border-left: 4px solid var(--primary); } .cdn-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); } .cdn-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; } .cdn-name { font-weight: 700; font-size: 1.2rem; color: var(--primary); } .cdn-actions { display: flex; gap: 10px; } .cdn-url { background-color: #f8f9fa; padding: 12px 15px; border-radius: 8px; font-family: monospace; margin-bottom: 15px; word-break: break-all; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; } .cdn-description { color: var(--gray); margin-bottom: 10px; } .cdn-tags { display: flex; flex-wrap: wrap; gap: 8px; } .tag { background-color: rgba(67, 97, 238, 0.1); color: var(--primary); padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; } .copy-btn { background: none; border: none; color: var(--primary); cursor: pointer; font-size: 1.1rem; transition: var(--transition); padding: 5px; border-radius: 4px; } .copy-btn:hover { background-color: rgba(67, 97, 238, 0.1); } .group-card { background-color: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: var(--shadow); transition: var(--transition); border-left: 4px solid var(--success); } .group-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; } .group-name { font-weight: 700; font-size: 1.3rem; color: var(--success); } .group-description { color: var(--gray); margin-bottom: 20px; } .cdn-list { margin-left: 20px; } .cdn-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); } .cdn-item:last-child { border-bottom: none; } .cdn-item-url { font-family: monospace; flex-grow: 1; margin-right: 15px; } .selection-controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; } .checkbox { display: flex; align-items: center; gap: 8px; cursor: pointer; } .checkbox input { width: 18px; height: 18px; } .toast { position: fixed; bottom: 20px; right: 20px; background-color: var(--primary); color: white; padding: 12px 20px; border-radius: 8px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 10px; z-index: 1000; opacity: 0; transform: translateY(20px); transition: var(--transition); } .toast.show { opacity: 1; transform: translateY(0); } @media (max-width: 768px) { .controls { flex-direction: column; } .search-box { max-width: 100%; } .cdn-header, .group-header { flex-direction: column; align-items: flex-start; gap: 10px; } .cdn-actions { align-self: flex-end; } } </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CDN Manager</h1>
+            <p>Easily manage and copy your Content Delivery Network links</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search CDNs...">
+            </div>
+            <div class="selection-controls">
+                <label class="checkbox">
+                    <input type="checkbox" id="selectAll"> Select All
+                </label>
+                <button class="btn btn-outline" id="copySelected">
+                    <i class="far fa-copy"></i> Copy Selected
+                </button>
+            </div>
+            <button class="btn btn-primary" id="copyAll">
+                <i class="fas fa-copy"></i> Copy All CDNs
+            </button>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="single">Single CDNs</div>
+            <div class="tab" data-tab="grouped">Grouped CDNs</div>
+        </div>
+
+        <div class="content active" id="single-tab">
+            <div class="cdn-card">
+                <div class="cdn-header">
+                    <div class="cdn-name">Font Awesome</div>
+                    <div class="cdn-actions">
+                        <button class="copy-btn" data-url="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                            <i class="far fa-copy"></i>
+                        </button>
+                        <label class="checkbox">
+                            <input type="checkbox" class="cdn-checkbox">
+                        </label>
+                    </div>
+                </div>
+                <div class="cdn-url">
+                    <span>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css</span>
+                </div>
+                <div class="cdn-description">Icon library and toolkit</div>
+                <div class="cdn-tags">
+                    <span class="tag">CSS</span>
+                    <span class="tag">Icons</span>
+                    <span class="tag">Fonts</span>
+                </div>
+            </div>
+
+            <div class="cdn-card">
+                <div class="cdn-header">
+                    <div class="cdn-name">jQuery</div>
+                    <div class="cdn-actions">
+                        <button class="copy-btn" data-url="https://code.jquery.com/jquery-3.6.0.min.js">
+                            <i class="far fa-copy"></i>
+                        </button>
+                        <label class="checkbox">
+                            <input type="checkbox" class="cdn-checkbox">
+                        </label>
+                    </div>
+                </div>
+                <div class="cdn-url">
+                    <span>https://code.jquery.com/jquery-3.6.0.min.js</span>
+                </div>
+                <div class="cdn-description">Fast, small, and feature-rich JavaScript library</div>
+                <div class="cdn-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Library</span>
+                </div>
+            </div>
+
+            <div class="cdn-card">
+                <div class="cdn-header">
+                    <div class="cdn-name">Bootstrap</div>
+                    <div class="cdn-actions">
+                        <button class="copy-btn" data-url="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+                            <i class="far fa-copy"></i>
+                        </button>
+                        <label class="checkbox">
+                            <input type="checkbox" class="cdn-checkbox">
+                        </label>
+                    </div>
+                </div>
+                <div class="cdn-url">
+                    <span>https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css</span>
+                </div>
+                <div class="cdn-description">Popular CSS framework for responsive web design</div>
+                <div class="cdn-tags">
+                    <span class="tag">CSS</span>
+                    <span class="tag">Framework</span>
+                    <span class="tag">Responsive</span>
+                </div>
+            </div>
+
+            <div class="cdn-card">
+                <div class="cdn-header">
+                    <div class="cdn-name">Vue.js</div>
+                    <div class="cdn-actions">
+                        <button class="copy-btn" data-url="https://unpkg.com/vue@3/dist/vue.global.js">
+                            <i class="far fa-copy"></i>
+                        </button>
+                        <label class="checkbox">
+                            <input type="checkbox" class="cdn-checkbox">
+                        </label>
+                    </div>
+                </div>
+                <div class="cdn-url">
+                    <span>https://unpkg.com/vue@3/dist/vue.global.js</span>
+                </div>
+                <div class="cdn-description">Progressive JavaScript framework</div>
+                <div class="cdn-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Framework</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="grouped-tab">
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-name">Frontend Essentials</div>
+                    <button class="btn btn-success copy-group" data-group="frontend">
+                        <i class="far fa-copy"></i> Copy Group
+                    </button>
+                </div>
+                <div class="group-description">Essential libraries for modern frontend development</div>
+                <div class="cdn-list">
+                    <div class="cdn-item">
+                        <span class="cdn-item-url">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css</span>
+                        <button class="copy-btn" data-url="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="cdn-item">
+                        <span class="cdn-item-url">https://code.jquery.com/jquery-3.6.0.min.js</span>
+                        <button class="copy-btn" data-url="https://code.jquery.com/jquery-3.6.0.min.js">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="cdn-item">
+                        <span class="cdn-item-url">https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css</span>
+                        <button class="copy-btn" data-url="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-name">JavaScript Frameworks</div>
+                    <button class="btn btn-success copy-group" data-group="frameworks">
+                        <i class="far fa-copy"></i> Copy Group
+                    </button>
+                </div>
+                <div class="group-description">Popular JavaScript frameworks and libraries</div>
+                <div class="cdn-list">
+                    <div class="cdn-item">
+                        <span class="cdn-item-url">https://unpkg.com/vue@3/dist/vue.global.js</span>
+                        <button class="copy-btn" data-url="https://unpkg.com/vue@3/dist/vue.global.js">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="cdn-item">
+                        <span class="cdn-item-url">https://unpkg.com/react@18/umd/react.production.min.js</span>
+                        <button class="copy-btn" data-url="https://unpkg.com/react@18/umd/react.production.min.js">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="cdn-item">
+                        <span class="cdn-item-url">https://unpkg.com/react-dom@18/umd/react-dom.production.min.js</span>
+                        <button class="copy-btn" data-url="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">CDN copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(`${tab.dataset.tab}-tab`).classList.add('active');
+            });
+        });
+
+        // Copy functionality for single CDNs
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const url = button.getAttribute('data-url');
+                copyToClipboard(url);
+                showToast('CDN copied to clipboard!');
+            });
+        });
+
+        // Copy all CDNs
+        document.getElementById('copyAll').addEventListener('click', () => {
+            const allUrls = Array.from(document.querySelectorAll('.cdn-url span'))
+                .map(span => span.textContent)
+                .join('\n');
+            
+            copyToClipboard(allUrls);
+            showToast('All CDNs copied to clipboard!');
+        });
+
+        // Copy selected CDNs
+        document.getElementById('copySelected').addEventListener('click', () => {
+            const selectedUrls = Array.from(document.querySelectorAll('.cdn-checkbox:checked'))
+                .map(checkbox => {
+                    const card = checkbox.closest('.cdn-card');
+                    return card.querySelector('.cdn-url span').textContent;
+                })
+                .join('\n');
+            
+            if (selectedUrls) {
+                copyToClipboard(selectedUrls);
+                showToast('Selected CDNs copied to clipboard!');
+            } else {
+                showToast('Please select at least one CDN');
+            }
+        });
+
+        // Select all functionality
+        document.getElementById('selectAll').addEventListener('change', (e) => {
+            const checkboxes = document.querySelectorAll('.cdn-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = e.target.checked;
+            });
+        });
+
+        // Copy group functionality
+        document.querySelectorAll('.copy-group').forEach(button => {
+            button.addEventListener('click', () => {
+                const groupCard = button.closest('.group-card');
+                const urls = Array.from(groupCard.querySelectorAll('.cdn-item-url'))
+                    .map(span => span.textContent)
+                    .join('\n');
+                
+                copyToClipboard(urls);
+                showToast('Group CDNs copied to clipboard!');
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            document.querySelectorAll('.cdn-card, .group-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Helper function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
