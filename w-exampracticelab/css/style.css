@@ -8299,7 +8299,6 @@ textarea:-ms-input-placeholder {
   bottom: 0;
   z-index: 1;
   pointer-events: none;
-  background-image: url(../images/bg/dot-bg.html);
   background-position: center;
 }
 
@@ -14785,12 +14784,6 @@ Timeline Area
   background-repeat: no-repeat;
   background-position: center center;
 }
-.bg-image.bg-image2 {
-  background-image: url(../images/call-to-action/bg-image-1.html);
-}
-.bg-image.bg-image3 {
-  background-image: url(../images/call-to-action/bg-image-2.html);
-}
 
 .data-black-overlay {
   position: relative;
@@ -19739,51 +19732,9 @@ iframe {
   background-size: cover;
   background-position: center center;
 }
-.slider-bg-image.bg-image-1 {
-  background-image: url(../images/bg/bg-image-1.html);
-}
-.slider-bg-image.bg-image2 {
-  background-image: url(../images/call-to-action/bg-image-1.html);
-}
-.slider-bg-image.bg-image3 {
-  background-image: url(../images/slider-bg/bg-image-3.html);
-}
-.slider-bg-image.bg-image4 {
-  background-image: url(../images/bg-video/bg-image-4.html);
-}
-.slider-bg-image.bg-image5 {
-  background-image: url(../images/slider-bg/bg-image-4.html);
-}
-.slider-bg-image.bg-image5 {
-  background-image: url(../images/slider-bg/bg-image-5.html);
-}
-.slider-bg-image.bg-image6 {
-  background-image: url(../images/slider-bg/bg-image-6.html);
-}
-.slider-bg-image.bg-image10 {
-  background-image: url(../images/bg/bg-image-10.html);
-}
-.slider-bg-image.bg-image11 {
-  background-image: url(../images/bg/bg-image-11.html);
-}
-.slider-bg-image.bg-image13 {
-  background-image: url(../images/slider-bg/bg-image-13.html);
-}
-.slider-bg-image.bg-image14 {
-  background-image: url(../images/slider-bg/bg-image-14.html);
-}
-.slider-bg-image.bg-image15 {
-  background-image: url(../images/slider-bg/bg-image-15.html);
-}
-.slider-bg-image.bg-image16 {
-  background-image: url(../images/slider-bg/bg-image-16.html);
-}
 .slider-bg-image.bg-banner1 {
   background-image: url(../images/bg/main-banner-bg.png);
   background-size: unset;
-}
-.slider-bg-image.bg-banner2 {
-  background-image: url(../images/bg/main-banner-bg-2.html);
 }
 .slider-bg-image.slider-bg-shape {
   position: relative;
@@ -23377,9 +23328,6 @@ iframe {
   margin: 5px 5px 18px 5px;
   padding: 0;
   color: var(--dark-color-link);
-}
-.active-dark-mode .aiwave-cta .inner {
-  background-image: url(../images/light/cta-img/bg-img-02.png);
 }
 .active-dark-mode .aiwave-cta .inner .bg-shape-one {
   opacity: 0.15;
