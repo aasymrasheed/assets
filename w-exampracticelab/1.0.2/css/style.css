@@ -10798,8 +10798,8 @@ xclip
 }
 .popup-mobile-menu .mainmenu .has-menu-child-item > a::after {
   position: absolute;
-  content: "\e9b1";
-  font-family: "feather" !important;
+  content: "\f078";
+  font-family: var(--font-awesome) !important;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
@@ -12494,8 +12494,8 @@ body.active-dark-mode.modal-open {
 }
 .rainbow-accordion-style .card .card-header button::before {
   position: absolute;
-  content: "\e996";
-  font-family: "feather" !important;
+  content: "\f054";
+  font-family: var(--font-awesome) !important;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -16950,8 +16950,8 @@ iframe {
 }
 .rbt-progress-parent::after {
   position: absolute;
-  font-family: "feather" !important;
-  content: "\e914";
+  font-family: var(--font-awesome) !important;
+  content: "\f078";
   text-align: center;
   line-height: 46px;
   font-size: 20px;
@@ -16971,8 +16971,8 @@ iframe {
 }
 .rbt-progress-parent::before {
   position: absolute;
-  font-family: "feather" !important;
-  content: "\e914";
+  font-family: var(--font-awesome) !important;
+  content: "\f078";
   text-align: center;
   line-height: 46px;
   font-size: 24px;
@@ -17810,8 +17810,8 @@ iframe {
 }
 .rbt-utilize-area .rbt-course-details-list-wrapper li.has-submenu .collapse-btn::after, .rbt-utilize-area .rbt-default-sidebar-list li.has-submenu .collapse-btn::after {
   position: absolute;
-  content: "\e996";
-  font-family: "feather" !important;
+  content: "\f054";
+  font-family: var(--font-awesome) !important;
   font-size: var(--font-size-b1);
   color: var(--color-blackest);
   left: 5px;
@@ -20181,8 +20181,8 @@ iframe {
 .rbt-course-details-list-wrapper li.has-submenu .collapse-btn::after,
 .rbt-default-sidebar-list li.has-submenu .collapse-btn::after {
   position: absolute;
-  content: "\e996";
-  font-family: "feather" !important;
+  content: "\f054";
+  font-family: var(--font-awesome) !important;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
@@ -21180,11 +21180,11 @@ iframe {
 }
 .popup-dashboardleft-btn.opened i.feather-menu.right::before,
 .popup-dashboardright-btn.opened i.feather-menu.right::before {
-  content: "\e910";
+  content: "\f0c9";
 }
 .popup-dashboardleft-btn.opened i.feather-menu.left::before,
 .popup-dashboardright-btn.opened i.feather-menu.left::before {
-  content: "\e912";
+  content: "\f002";
 }
 
 /*---------------------------
@@ -21211,9 +21211,9 @@ iframe {
   height: 86px;
 }
 .rbt-show-more-btn::after {
-  content: "\e92e";
+  content: "\f007";
   position: absolute;
-  font-family: "feather";
+  font-family: var(--font-awesome);
   right: 0;
   top: 50%;
   transform: translateY(-50%);
