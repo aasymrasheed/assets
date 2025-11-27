@@ -10798,7 +10798,7 @@ xclip
 }
 .popup-mobile-menu .mainmenu .has-menu-child-item > a::after {
   position: absolute;
-  content: "\f078";
+  content: "\+";
   font-family: var(--font-awesome) !important;
   right: 10px;
   top: 50%;
@@ -10807,7 +10807,7 @@ xclip
   font-size: 18px;
 }
 .popup-mobile-menu .mainmenu .has-menu-child-item > a.open::after {
-  content: "\e996";
+  content: "\f068";
 }
 .popup-mobile-menu .mainmenu .rainbow-megamenu {
   padding: 0;
@@ -12494,7 +12494,7 @@ body.active-dark-mode.modal-open {
 }
 .rainbow-accordion-style .card .card-header button::before {
   position: absolute;
-  content: "\f054";
+  content: "\f068";
   font-family: var(--font-awesome) !important;
   right: 0;
   top: 50%;
@@ -12513,7 +12513,7 @@ body.active-dark-mode.modal-open {
   -webkit-text-fill-color: unset;
 }
 .rainbow-accordion-style .card .card-header button.collapsed::before {
-  content: "\e9b1";
+  content: "\+";
   background: none;
   background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -16951,7 +16951,7 @@ iframe {
 .rbt-progress-parent::after {
   position: absolute;
   font-family: var(--font-awesome) !important;
-  content: "\f078";
+  content: "\f062";
   text-align: center;
   line-height: 46px;
   font-size: 20px;
@@ -16972,7 +16972,7 @@ iframe {
 .rbt-progress-parent::before {
   position: absolute;
   font-family: var(--font-awesome) !important;
-  content: "\f078";
+  content: "\f062";
   text-align: center;
   line-height: 46px;
   font-size: 24px;
@@ -17810,7 +17810,7 @@ iframe {
 }
 .rbt-utilize-area .rbt-course-details-list-wrapper li.has-submenu .collapse-btn::after, .rbt-utilize-area .rbt-default-sidebar-list li.has-submenu .collapse-btn::after {
   position: absolute;
-  content: "\f054";
+  content: "\f068";
   font-family: var(--font-awesome) !important;
   font-size: var(--font-size-b1);
   color: var(--color-blackest);
@@ -20181,7 +20181,7 @@ iframe {
 .rbt-course-details-list-wrapper li.has-submenu .collapse-btn::after,
 .rbt-default-sidebar-list li.has-submenu .collapse-btn::after {
   position: absolute;
-  content: "\f054";
+  content: "\f068";
   font-family: var(--font-awesome) !important;
   right: 10px;
   top: 50%;
@@ -20190,7 +20190,7 @@ iframe {
 }
 .rbt-course-details-list-wrapper li.has-submenu .collapse-btn.collapsed::after,
 .rbt-default-sidebar-list li.has-submenu .collapse-btn.collapsed::after {
-  content: "\e9b1";
+  content: "\+";
 }
 .rbt-course-details-list-wrapper li.has-submenu .submenu,
 .rbt-default-sidebar-list li.has-submenu .submenu {
@@ -21180,11 +21180,11 @@ iframe {
 }
 .popup-dashboardleft-btn.opened i.feather-menu.right::before,
 .popup-dashboardright-btn.opened i.feather-menu.right::before {
-  content: "\f0c9";
+  content: "\f060";
 }
 .popup-dashboardleft-btn.opened i.feather-menu.left::before,
 .popup-dashboardright-btn.opened i.feather-menu.left::before {
-  content: "\f002";
+  content: "\f061";
 }
 
 /*---------------------------
@@ -21211,7 +21211,7 @@ iframe {
   height: 86px;
 }
 .rbt-show-more-btn::after {
-  content: "\f007";
+  content: "\f107";
   position: absolute;
   font-family: var(--font-awesome);
   right: 0;
@@ -21223,7 +21223,7 @@ iframe {
   display: none;
 }
 .rbt-show-more-btn.active::after {
-  content: "\e931";
+  content: "\f106";
 }
 
 .has-show-more .has-show-more-inner-content {
