@@ -216,8 +216,8 @@
                 arrows: true,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>'
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>'
             });
 
             $('.sm-slider-carosel-activation').not('.slick-initialized').slick({
@@ -238,8 +238,8 @@
                 arrows: true,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>'
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>'
             });
 
             $('.blog-carousel-activation').not('.slick-initialized').slick({
@@ -274,8 +274,8 @@
                 slidesToScroll: 2,
                 dots: true,
                 arrows: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
                 cssEase: 'linear',
                 responsive: [
                     {
@@ -372,8 +372,8 @@
                 arrows: true,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
                 responsive: [
                     {
                       breakpoint: 769,
@@ -408,8 +408,8 @@
                 centerMode:true,
                 centerPadding: '100px',
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
                 responsive: [
                     {
                       breakpoint: 769,
@@ -444,8 +444,8 @@
                 centerMode:true,
                 centerPadding: '200px',
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
                 responsive: [
                     {
                       breakpoint: 769,
@@ -477,8 +477,8 @@
                 arrows: true,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
                 responsive: [
                     {
                       breakpoint: 769,
@@ -511,8 +511,8 @@
                 arrows: false,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
             });
 
 
@@ -526,8 +526,8 @@
                 adaptiveHeight: true,
                 cssEase: 'linear',
                 centerMode: false,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa-regular fa-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow" title="previous"><i class="fa-regular fa-arrow-left"></i></button>',
+                nextArrow: '<button class="slide-arrow next-arrow" title="next"><i class="fa-sharp fa-regular fa-arrow-right"></i></button>',
                 responsive: [
                     {
                       breakpoint: 769,
