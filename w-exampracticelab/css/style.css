@@ -16311,7 +16311,7 @@ img.mfp-img {
   justify-content: center;
   align-items: center;
 }
-.brand-style-2 li a img {
+.brand-style-2 li img {
   opacity: 0.6;
   transition: 0.3s;
   max-height: 34px;
@@ -23113,7 +23113,7 @@ iframe {
 .active-dark-mode .slider-style-1.variation-default .slider-frame {
   background-image: url("../images/light/bg/slider-main-bg.png");
 }
-.active-dark-mode .brand-style-2 li a img {
+.active-dark-mode .brand-style-2 li img {
   filter: invert(1);
 }
 .active-dark-mode .brand-style-2.slider-brand::before {
